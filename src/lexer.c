@@ -1,6 +1,6 @@
 #include <ctype.h>
 #include <string.h>
-#include "lexer.h"
+#include "../include/lexer.h"
 
 Token lexer_next(Lexer* l) {
     Token t;

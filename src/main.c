@@ -1,4 +1,5 @@
-#include "lexer.h"
+#include "../include/lexer.h"
+#include "../include/parser.h"
 #include <stdio.h>
 
 const char* kind_to_str(TokenKind k) {
@@ -26,6 +27,16 @@ int main() {
         printf("%s: %s\n", kind_to_str(t.kind), t.text);
         if (t.kind == END_OF_FILE) break;
     }
+    
+    Parser p;
+    parser_init(&p, "add x1, x2, x3\n");
+
+    Instr instr = parser_next(&p);
+
+    printf("op = %d\n", instr.op);
+    printf("rd: %d\n", instr.rd);
+    printf("rs1: %d\n", instr.rs1);
+    printf("rs2: %d\n", instr.rs2);
 
     return 0;
 }
