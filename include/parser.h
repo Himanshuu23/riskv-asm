@@ -2,6 +2,7 @@
 #define PARSER_H
 
 #include "lexer.h"
+#include <stdint.h>
 
 typedef enum {
     ADD,
@@ -16,10 +17,10 @@ typedef enum {
 
 typedef struct {
     OpKind op;
-    int    rd;
-    int    rs1;
-    int    rs2;
-    int    imm;
+    uint32_t    rd;
+    uint32_t    rs1;
+    uint32_t    rs2;
+    uint32_t    imm;
 } Instr;
 
 typedef struct {
