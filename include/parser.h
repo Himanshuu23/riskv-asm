@@ -30,5 +30,6 @@ typedef struct {
 
 void parser_init(Parser* p, char* src);
 Instr parser_next(Parser* p);
+void advance(Parser* p);
 
 #endif
