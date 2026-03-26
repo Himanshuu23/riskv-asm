@@ -19,7 +19,8 @@ void parser_init(Parser* p, char* src) {
 }
 
 Instr parser_next(Parser *p) {
-    Instr instr = {0};
+    Instr instr;
+    memset(&instr, 0, sizeof(Instr)); 
 
     if (strcmp(p->current.text, "add") == 0) {
         instr.op = ADD;
